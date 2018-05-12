@@ -9,8 +9,10 @@ $ git checkout gh-pages
 
 If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
 
+| Repository | Project Site | Language |
+| ---------- | ------------ | -------- |
 {% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }}) {% if repository.language %}({{ repository.language }}){% endif %}
+| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %} Y {% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
 {% endfor %}
 
 ### Designer Templates
