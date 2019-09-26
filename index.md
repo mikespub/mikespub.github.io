@@ -9,14 +9,14 @@ $ git checkout gh-pages
 
 If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
 
-| Repository | Project Site | Language |
-| ---------- | ------------ | -------- |
-{% for repository in site.github.public_repositories %}{% if repository.archived %}{% else %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
+| Repository | Project Site | Language | Fork |
+| ---------- | ------------ | -------- | ---- |
+{% for repository in site.github.public_repositories %}{% if repository.archived %}{% else %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}{{ repository.language }}{% endif %} | {% if repository.fork %}Y{% endif %} |
 {% endif %}{% endfor %}
 
-| Archived Repository | Project Site | Language |
-| ------------------- | ------------ | -------- |
-{% for repository in site.github.public_repositories %}{% if repository.archived %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
+| Archived Repository | Project Site | Language | Fork |
+| ------------------- | ------------ | -------- | ---- |
+{% for repository in site.github.public_repositories %}{% if repository.archived %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}{{ repository.language }}{% endif %} | {% if repository.fork %}Y{% endif %} |
 {% else %}{% endif %}{% endfor %}
 
 ### Designer Templates
