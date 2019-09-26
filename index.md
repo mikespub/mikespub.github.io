@@ -11,8 +11,8 @@ If you're using the GitHub for Mac, simply sync your repository and you'll see t
 
 | Repository | Project Site | Language |
 | ---------- | ------------ | -------- |
-{% for repository in site.github.public_repositories %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
-{% endfor %}
+{% for repository in site.github.public_repositories %}{% if not repository.archived %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
+{% endif %}{% endfor %}
 
 ### Designer Templates
 We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
