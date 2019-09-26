@@ -11,7 +11,7 @@ If you're using the GitHub for Mac, simply sync your repository and you'll see t
 
 | Repository | Project Site | Language |
 | ---------- | ------------ | -------- |
-{% for repository in site.github.public_repositories %}{% if not repository.archived %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
+{% for repository in site.github.public_repositories %}{% if repository.archived %}{% else %}| [{{ repository.name }}]({{ repository.html_url }}) | {% if repository.has_pages %}[{{ repository.name }}]({{ repository.homepage }}){% endif %} | {% if repository.language %}({{ repository.language }}){% endif %} |
 {% endif %}{% endfor %}
 
 ### Designer Templates
